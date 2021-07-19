@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "89e312ca-bb27-4155-a823-788ce70eba42",
+		"name": "Tracker-server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"t@t.com\",\n    \"password\":\"2\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"signin"
+							]
+						},
+						"description": "don't forget about header Authorization with value \"Bearer <token>\""
+					},
+					"response": []
+				},
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"t@t.com\",\n    \"password\":\"2\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"signup"
+							]
+						},
+						"description": "sign up with email and password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get start authorized",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGY1NGZmYThmNTE0ZjM5YWU1MWJjNjQiLCJpYXQiOjE2MjY3MDE2Mjl9.t8zCFSOktHFwz0NfiI7r_c8g67qNqe8J84pDdQ5-Ll4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				},
+				"description": "get start with authorization token"
+			},
+			"response": []
+		},
+		{
+			"name": "Tracks authorized",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGY1NGZmYThmNTE0ZjM5YWU1MWJjNjQiLCJpYXQiOjE2MjY3MDE2Mjl9.t8zCFSOktHFwz0NfiI7r_c8g67qNqe8J84pDdQ5-Ll4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/tracks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add new track",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MGY1NGZmYThmNTE0ZjM5YWU1MWJjNjQiLCJpYXQiOjE2MjY3MDE2Mjl9.t8zCFSOktHFwz0NfiI7r_c8g67qNqe8J84pDdQ5-Ll4",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"My track\",\n    \"locations\": [\n        {\n            \"timestamp\": 2222,\n            \"coords\": {\n                \"latitude\": 100,\n                \"longitude\": 100,\n                \"atitude\": 100,\n                \"heading\": 100,\n                \"speed\": 100\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/tracks",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tracks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
