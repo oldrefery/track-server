@@ -1,7 +1,10 @@
 # track-server
-backend part for tracker application
+##About the Application
+This is the back end server for tracker app.
 
-### **Steps**
+express api and make calls to a mongodb database with users and tracks
+
+## **Steps**
 1. npm install
 2. npm start 
 
